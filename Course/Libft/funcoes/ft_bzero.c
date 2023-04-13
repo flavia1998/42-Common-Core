@@ -2,14 +2,13 @@
 #include <string.h>
 void ft_bzero(void *s, size_t n)
 {
-	unsigned char *name = s;
 
 	size_t i;
-
 	i = 0;
-	while (name[i] != '\0' && i < n)
+	while ( i < n)
 	{
-		name[i] = 0;
+		*s = 0;
+		s++;
 		i++;
 	}
 }
