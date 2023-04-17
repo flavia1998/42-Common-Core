@@ -82,10 +82,40 @@ int main (void)
 
 //strdup
 
-char src[10] ="ana";
+/*char src[10] ="ana";
 char *dest;
 dest = ft_strdup(src);
-printf("%s",dest); 
+printf("%s",dest); */
+
+
+//calloc
+
+  /*int i, n;
+   int *a;
+
+   printf("Number of elements to be entered:");
+   scanf("%d",&n);
+
+   a = (int*)ft_calloc(n, sizeof(int));
+   printf("Enter %d numbers:\n",n);
+   for( i=0 ; i < n ; i++ ) {
+      scanf("%d",&a[i]);
+   }
+
+   printf("The numbers entered are: ");
+   for( i=0 ; i < n ; i++ ) {
+      printf("%d ",a[i]);
+   }*/ 
+
+   // strnstr
+
+    const char *largestring = "Foo Bar Baz";
+	   const char *smallstring = "Bar";
+	   char	*ptr;
+
+	   ptr = ft_strnstr(largestring, smallstring, 4);
+       printf("%s",ptr);
+
     
      return(0);
 

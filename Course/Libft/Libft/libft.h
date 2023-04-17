@@ -35,6 +35,7 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strcpy(char *dest, char *src);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 
 //memory
@@ -44,6 +45,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *str1, const void *str2, size_t n);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strdup(const char *s);
+void    *ft_calloc(size_t nitems, size_t size);
 
 //convert to 
 int	ft_tolower_l(int c);
