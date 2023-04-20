@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:47:07 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/19 15:37:22 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/14 17:53:11 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/04/19 12:23:26 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	if ((c < 32 || c > 126))
-	{
-		return (0);
-	}
-	return (1);
+	void	*new_array;
+
+	if (nitems == 0 || size == 0)
+		return (NULL);
+	new_array = malloc(nitems * size);
+	ft_bzero(new_array, size * nitems);
+	return (new_array);
 }

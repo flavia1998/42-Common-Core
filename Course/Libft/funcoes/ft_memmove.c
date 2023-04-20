@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:47:07 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/19 15:37:22 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/13 15:05:27 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/04/19 18:05:19 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	*ft_memmove(void *str1, const void *str2, size_t n)
 {
-	if ((c < 32 || c > 126))
+	unsigned char	*s1;
+	unsigned char	*s2;
+	unsigned char	*temp;
+	size_t				i;
+
+	i = 0;
+	s1 = str1;
+	s2 = str2;
+	while (*s2 != '\0' && i < n)
 	{
-		return (0);
+		
+		s1++;
+		s2++;
+		i++;
 	}
-	return (1);
+	return (str1);
 }

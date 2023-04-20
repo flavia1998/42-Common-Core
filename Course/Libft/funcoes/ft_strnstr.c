@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:47:07 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/19 15:37:22 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/14 14:57:22 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/04/17 16:53:49 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if ((c < 32 || c > 126))
+	size_t	i;
+	size_t	j;
+	char	*little1;
+	char	*big1;
+
+	little1 = (char *)little;
+	big1 = (char *)big;
+	i = 0;
+	if (little1[0] == '\0')
+		return (big1);
+	while (big1[i] && i < len)
 	{
-		return (0);
+		j = 0;
+		while (big1[i + j] != '\0' && big1[i + j] == little1[j]
+			&& (i + j < len))
+		{
+			if (little1[j + 1] == '\0')
+				return (&big1[i]);
+			j++;
+		}
+		i++;
 	}
-	return (1);
+	return (NULL);
 }
