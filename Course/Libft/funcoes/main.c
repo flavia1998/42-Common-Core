@@ -6,7 +6,7 @@
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 11:50:34 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/19 17:45:17 by fvieira-         ###   ########.fr       */
+/*   Updated: 2023/04/20 14:54:52 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,20 @@ int main (void)
 
 
 	//ft_isdigit 
-
+	
 	// char c;
     // c='5';
     // printf("Result when numeric character is passed: %d", ft_isdigit(c));
-
     // c='+';
     // printf("\nResult when non-numeric character is passed: %d", ft_isdigit(c));
 
 	//memmove
-   const char src1[100] = "lorem ipsum dolor sit amet";
-   char dest2[100];
-   int n1 = 8;
-   printf("Before memcpy dest = %s\n", dest2);
-   ft_memmove(dest2, src1, n1);
-   printf("After memcpy dest = %s\n", dest2);
+	
+	//const char *src1 = "lorem ipsum dolor sit amet";
+	//    char *dest2;
+	//    int n1 = 8;
+	//    ft_memmove(dest2, src1, n1);
+	//    printf("After memcpy dest = %s\n", dest2);
 
 //strlcat
 
@@ -45,50 +44,37 @@ int main (void)
 	// char str[] = "bonjour";
     // int c = 97;
 	// char *ret;
-
     // ret = ft_strchr(str, c);
-
     // printf("%s", ret);
+	
 
 //strrchr
 
-//    const char str[] = "bonjour";
-//    const char ch = 'o';
-//    char *ret;
-
-//    ret = ft_strrchr(str, ch);
-
-//    printf("String after |%c| is - |%s|\n", ch, ret);
+//const char str[] = "bonjour";
+//const char ch = 'o';
+//char *ret;
+//ret = ft_strrchr(str, ch);
+//printf("String after |%c| is - |%s|\n", ch, ret);
 
 
 //memchr
+
 // const char str[] = "http://www.tutorialspoint.com";
-//     const char ch = '.';
-//     char *ret;
-
-//     ret = memchr(str, ch, 4);
-
-//     printf("String after |%c| is - |%s|\n", ch, ret);
+// const char ch = '.';
+//char *ret;
+//ret = memchr(str, ch, 4);
+//printf("String after |%c| is - |%s|\n", ch, ret);
 
 
 //memcmp
 
-//  char str1[15];
-//    char str2[15];
-//    int ret;
+//char str1[15];
+//char str2[15];
+//int ret;
+//ft_memcpy(str1, "abc", 6);
+//ft_memcpy(str2, "abcd", 6);
+//ret = ft_memcmp(str1, str2, 5);
 
-//    ft_memcpy(str1, "abc", 6);
-//    ft_memcpy(str2, "abcd", 6);
-
-//    ret = ft_memcmp(str1, str2, 5);
-
-//    if(ret > 0) {
-//       printf("str2 is less than str1");
-//    } else if(ret < 0) {
-//       printf("str1 is less than str2");
-//    } else {
-//       printf("str1 is equal to str2");
-//    }
 
 //memcpy
 // const char src[50] = "http://www.tutorialspoint.com";

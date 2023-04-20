@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   2main.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 11:44:45 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/20 13:21:28 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/20 15:29:29 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/04/20 16:41:17 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int main()
 {
-	unsigned const char	*s;
-	unsigned char		*d;
-	size_t				i;
+	char s[50]= "maria joaquina";
 
-	d = dest;
-	s = src;
-	i = 0;
-	while (i < n)
-	{
-		*d = *s;
-		d++;
-		s++;
-		i++;
-	}
-	return (dest);
+	char *sub = ft_substr(s, 2, 6);
+	printf("%s\n",sub);
+	
+	
 }
