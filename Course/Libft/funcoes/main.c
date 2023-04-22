@@ -24,13 +24,13 @@ int main (void)
     // c='+';
     // printf("\nResult when non-numeric character is passed: %d", ft_isdigit(c));
 
-	//memmove
+	//ft_memmove
 	
-	//const char *src1 = "lorem ipsum dolor sit amet";
-	//    char *dest2;
-	//    int n1 = 8;
-	//    ft_memmove(dest2, src1, n1);
-	//    printf("After memcpy dest = %s\n", dest2);
+	// const char *src1 = "lorem ipsum dolor sit amet";
+    // int n1 = 8;
+	// char dest2[50] = "";
+    // ft_memmove(dest2, src1, n1);
+	// printf("After memmove dest = %s\n", dest2);
 
 //strlcat
 
@@ -102,13 +102,13 @@ int main (void)
     // char s[15] = "sou lindo";
     // int c = 65;
     // size_t n = 5;
-    // ft_memset(s, c, n);
+    // ft_memset(s, c, ft_strlen(s));
     // printf("%s\n", s);
 	
     // char a[15] = "sou lindo";
     // int h = 65;
     // size_t l = 5;
-    // memset(a, h, l);
+    // memset(a, h,);
     // printf("%s\n", a);
 	
 	//isprint 
@@ -130,8 +130,8 @@ int main (void)
 
 //    ret = ft_strncmp(str1, str2, 4);
 //    printf("%d\n",ret);
+//calloc
 
-   
 
 return(0);
 }

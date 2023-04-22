@@ -16,9 +16,14 @@ void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*new_array;
 
-	if (nitems == 0 || size == 0)
-		return (NULL);
+	if (size == 0)
+	{	
+		new_array = malloc(1);
+		return (new_array);
+	}
 	new_array = malloc(nitems * size);
+	if (new_array == NULL)
+		return NULL;
 	ft_bzero(new_array, size * nitems);
 	return (new_array);
 }
