@@ -38,6 +38,7 @@ char	*ft_strcpy(char *dest, char *src);
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_substr(char const *s, unsigned int start,size_t len);
 char    *ft_strtrim(char const *s1, char const *set);
+char    *ft_itoa(int n);
 //memory
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
