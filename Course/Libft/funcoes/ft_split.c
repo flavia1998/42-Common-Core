@@ -1,10 +1,11 @@
 
 #include "libft.h"
 
-int    break_local(char const *s, char c)
+int    count_delimiter(char const *s, char c)
 {
     char    *str;
     int     i;
+    int     j;
 
     str = (char *)s;
     i = 0;
@@ -12,37 +13,31 @@ int    break_local(char const *s, char c)
     {
         if (str[i] == c)
         { 
-            break;
+            j++;
         }
        i++;
     }
-    return (i+1);
+    return (j);
 }
 
 char    **ft_split(char const *s, char c)
 {
-    int     b_local;
-    char    *str;
-    char    *new_str;
-    int      i;
-
-    i = 0;
-    str =(char *)s;
-    b_local = break_local(s,c);
-
-    new_str = (char *)malloc(b_local*(sizeof(char ) + 1));
-    if (new_str == NULL)
+    int     delimiter_count;
+    char    *delimited_str;
+  
+    delimiter_count = count_delimiter(s,c);
+    delimited_str = (char *)malloc( (delimiter_count * sizeof(char)) + 2);
+    if (delimited_str == NULL)
         return NULL;
     ft_strlcpy(new_str,str,b_local);
-    return *new_str;
+    return new_str;
 }
 
-int main(void)
-{
-    char s[50] = "flavia andreia vieira pinto";
-    char c = 'f';
-    char *new;
-    new = ft_split(s,c);
-    printf("%s",new);
-    return 0;
-}
+// int main(void)
+// {
+//     char s[50] = "flavia andreia vieira pinto";
+//     char c = ' ';
+//     char *new_array;
+//     new_array = split_strs(s,c);
+//     printf("%s",new_array);
+// }
