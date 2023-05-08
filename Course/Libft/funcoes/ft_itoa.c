@@ -1,68 +1,68 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 14:36:43 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/27 16:53:30 by fvieira-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "libft.h"
 
-long	number_digits(int n)
-{ 
-	long     size_digit;
-	
-	size_digit = 0;
-	if (n < 0) 
-	{
-    	n = -n;
-	}
-    while (n != 0)
-    {
-        size_digit++;
-        n = n / 10; 
-	}
-	size_digit++;
-	return size_digit;
-}
-
-char    *ft_itoa(int n)
+static int count_digits(long int n)
 {
-    char	*str_num;
-    long	reverse_count;
-	long	digits;
-	long 	neg;
+	int count;
 
-	neg = 0;
-	digits = number_digits(n);
-    str_num = (char *)malloc((sizeof(char)) * (digits + 2));
-	if (n < 0)
+	count = 0;
+	if (n <= 0)
 	{
-		neg = 1;
+		count++;
 		n *= -1;
 	}
-    reverse_count = digits - 1;
-    while (reverse_count > 0)
-    {
-        str_num[reverse_count] = (n % 10) + '0'; 
-        n = n / 10;
-        reverse_count--;
-    }
-		if (neg)
-		str_num[reverse_count] = '-';
-    str_num[digits] = '\0';
-    return str_num;
+	while (n > 0)
+	{
+		n = n / 10;
+		count++;
+	}
+	return (count);
 }
 
-// int main()
+char *transformer_str(char *str, int nb, int c_digits)
+{
+	str[c_digits--] = '\0';
+	if (nb == 0)
+	{	
+		str[0] = '0';
+		return (str);
+	}
+	if (nb == -2147483648)
+	{
+		str[0] = '-';
+		str[1] = '2';
+		nb = 147483648;
+	}
+	else if (nb < 0)
+	{
+		str[0] = '-';
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		str[c_digits--] = (nb % 10) + '0';
+		nb = nb / 10;
+	}
+	return (str);
+}
+char *ft_itoa(int n)
+{
+	long int c_digits;
+	char *str_num;
+	long int nb;
+
+	nb = n;
+	c_digits = count_digits(nb);
+	str_num = (char *)malloc(sizeof(char) * (c_digits + 1));
+	if (str_num == NULL)
+		return (NULL);
+	str_num = transformer_str(str_num,nb,c_digits);
+	return (str_num);
+}
+
+// int main(void)
 // {
-//     int n = -200;
-//     char *num;
-//     num = ft_itoa(n);
-//     printf("%s",num);
-//     return 0;
+// 	char *res = ft_itoa(-2147483648);
+// 	printf("%s\n", res);
+// 	return 0;
 // }
