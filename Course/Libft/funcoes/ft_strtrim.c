@@ -69,7 +69,8 @@ char *ft_strtrim(char const *s1, char const *set)
 		return (empty_string);
 	}
 
-	if (!(result = (char *)malloc(sizeof(char) * (end_index - start_index + 2))))
+	result = (char *)malloc(sizeof(char) * (end_index - start_index + 2));
+	if (!result)
 		return (NULL);
 
 	ft_strlcpy(result, &s1[start_index], end_index - start_index + 2);
@@ -90,8 +91,3 @@ char *ft_strtrim(char const *s1, char const *set)
 
 // 	return 0;
 // }
-
-
-
-
-

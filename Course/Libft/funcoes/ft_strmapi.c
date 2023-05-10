@@ -19,22 +19,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
-	size_s = ft_strlen(s); 
+	size_s = ft_strlen(s);
 	iter_str = (char *)malloc(size_s + 1);
-	if(!iter_str)
-		return NULL;
-	while(s[i] != '\0')
+	if (!iter_str)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		iter_str[i] = f(i,s[i]);
+		iter_str[i] = f(i, s[i]);
 		i++;
 	}
-	iter_str[i]= '\0';
+	iter_str[i] = '\0';
 	return (iter_str);
 }
 // int main()
 // {
 // 	char name[10]="ana";
-	
 // 	char *new;
 // 	new = ft_strmapi(name, ft_strchar(1,"a"));
 // 	printf("%s",new);

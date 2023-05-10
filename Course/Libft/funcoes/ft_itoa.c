@@ -1,25 +1,24 @@
-
 #include "libft.h"
 
-static int count_digits(long int n)
+int	count_digits(long int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (n <= 0)
 	{
-		count++;
+		count ++;
 		n *= -1;
 	}
 	while (n > 0)
 	{
 		n = n / 10;
-		count++;
+		count ++;
 	}
 	return (count);
 }
 
-char *transformer_str(char *str, int nb, int c_digits)
+char	*transformer_str(char *str, int nb, int c_digits)
 {
 	str[c_digits--] = '\0';
 	if (nb == 0)
@@ -45,18 +44,19 @@ char *transformer_str(char *str, int nb, int c_digits)
 	}
 	return (str);
 }
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
-	long int c_digits;
-	char *str_num;
-	long int nb;
+	long int	c_digits;
+	char		*str_num;
+	long int	nb;
 
 	nb = n;
 	c_digits = count_digits(nb);
 	str_num = (char *)malloc(sizeof(char) * (c_digits + 1));
 	if (str_num == NULL)
 		return (NULL);
-	str_num = transformer_str(str_num,nb,c_digits);
+	str_num = transformer_str(str_num, nb, c_digits);
 	return (str_num);
 }
 

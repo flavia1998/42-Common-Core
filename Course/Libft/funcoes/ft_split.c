@@ -1,9 +1,12 @@
 #include "libft.h"
 
-int row_number(char const *s, char c)
+int	row_number(char const *s, char c)
 {
-    int i = 0;
-    int j = 0;
+    int i;
+    int j;
+
+	i = 0;
+	j = 0;
     while (s[i] != '\0')
     {
         if (s[i] != c && (i == 0 || s[i - 1] == c))
@@ -15,42 +18,32 @@ int row_number(char const *s, char c)
     return j;
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char **split_str;
-    int i = 0;
-	int start = 0;
-	int end  = 0;
-    int row_num = row_number(s, c);
-    
-    split_str = (char **)malloc((row_num + 1) * sizeof(char *));
-    if (split_str == NULL)
+    char	**split_str;
+    int		i;
+	int		start;
+	int		end;
+
+	i = 0;
+	start = 0;
+	end = 0;
+    if (!(split_str = (char **)malloc((row_number(s, c) + 1) * sizeof(char *))))
         return NULL;
-    
-    while (i < row_num)
+    while (i < row_number(s, c))
     {
-		// ignore delimiter at begining
         while (s[end] == c)
             end++;
-
 		start = end;
-
-		// calculate end
         while (s[end] != '\0' && s[end] != c)
             end++;
-
-		// allocate space for delimited str
-        split_str[i] = (char *)malloc((end - start + 1) * sizeof(char));
-        if (split_str[i] == NULL)
+        if (!(split_str[i] = (char *)malloc((end - start + 1) * sizeof(char))))
             return NULL;
-
-		// copy delimited str
 		ft_strlcpy(split_str[i], s + start, end - start + 1);
         i++;
     }
-    
-    split_str[row_num] = NULL;
-    return split_str;
+    split_str[row_number(s, c)] = NULL;
+    return (split_str);
 }
 
 // int main(void)

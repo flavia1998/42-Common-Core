@@ -14,26 +14,30 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substr;
-	size_t	i;
+	unsigned int	j;
+	char			*substr;
 
-	if (start >= ft_strlen(s))
-	{	
-		substr = (char *)malloc(sizeof(char));
-		if (substr == NULL)
-			return (NULL);
-		substr[0] = '\0';
-		return (substr);
-	}
-	substr = (char *)malloc(sizeof(char) * (len)+1);
+	j = 0;
+	if (ft_strlen(s) < start)
+		len = 0;
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	substr = malloc(sizeof(char) * (len + 1));
 	if (substr == NULL)
 		return (NULL);
-	i = 0;
-	while (i < len && s[start + i] != '\0')
+	while (j < len)
 	{
-		substr[i] = s[start + i];
-		i++;
+		substr[j] = s[start];
+		start ++;
+		j ++;
 	}
-	substr[i] = '\0';
+	substr[j] = '\0';
 	return (substr);
 }
+// int main(void)
+// {
+// 	char *substr;
+// 	substr = ft_substr("maria joana", 2, 4);
+// 	printf("%s", substr);
+// 	return 0;
+// }

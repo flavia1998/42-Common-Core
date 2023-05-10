@@ -33,3 +33,5 @@ fclean : clean
 
 re : fclean all
 
+bonus: $(OBJS) $(BOBJECTS)
+	$(AR) -r $(NAME) $?
