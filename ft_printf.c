@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 #include <stdarg.h>
 
 int calling_funtions(va_list args, char c)

@@ -14,7 +14,7 @@
 #define FT_PRINTF
 
 #include <stdarg.h>
-#include "libft.h"
+# include "./libft/libft.h"
 #include <unistd.h>
 
 void	ft_phexa(unsigned long long n);

@@ -16,7 +16,7 @@ void	ft_phexa(unsigned long long n)
 	}
 }
 
-int	count_digits(unsigned long long n)
+int	ft_count_digits(unsigned long long n)
 {
 	int i;
 
@@ -33,7 +33,7 @@ int	ft_print_p(unsigned long long n)
 {
 	int digits_value;
 
-	digits_value = count_digits (n);
+	digits_value = ft_count_digits (n);
 	if (n == 0)
 	{
 		write (1, "(nil)", 5);
