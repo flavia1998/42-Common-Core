@@ -4,7 +4,7 @@ CFLAGS			=	-Wall -Wextra -Werror
 AR				=	ar
 ARFLAGS 		=	rcs
 RM				=	rm -rf
-SRC = ft_print_c ft_print_i_d ft_print_p ft_print_s ft_print_u ft_print_X_x ft_printf
+SRC 			=	ft_print_c ft_print_i_d ft_print_p ft_print_s ft_print_u ft_print_X_x ft_printf
 SRCS 			=	$(addsuffix .c, $(SRC))
 OBJ_DIR			=	obj
 OBJS			=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
@@ -15,7 +15,7 @@ $(OBJ_DIR)/%.o:		%.c
 
 all:				$(NAME)
 
-bonus:				all
+# bonus:				all
 
 $(NAME):			$(LIBFT) $(OBJ_DIR) $(OBJS)
 				cp	$(LIBFT) $(NAME)
