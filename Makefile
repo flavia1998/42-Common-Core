@@ -27,6 +27,7 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 clean:
+	@make -C $(LIBFTDIR) clean
 	@rm -f $(OBJS)
 	@cd $(LIBFTDIR) && make clean
 
