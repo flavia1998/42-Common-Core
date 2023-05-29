@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 
-int main(int argc, char const *argv[])
+int main()
 {
-    ft_printf("%d", 1);
+    ft_printf("hello world");
     return 0;
 }

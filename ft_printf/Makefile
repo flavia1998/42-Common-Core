@@ -1,14 +1,14 @@
-NAME			=	libftprintf.a
+NAME			=	ft_printf.a
 CC				=	gcc
 CFLAGS			=	-Wall -Wextra -Werror
 AR				=	ar
 ARFLAGS 		=	rcs
 RM				=	rm -rf
-SRC 			=	ft_print_c ft_print_i_d ft_print_p ft_print_s ft_print_u ft_print_X_x ft_printf
+SRC 			=	ft_print_c ft_print_i_d ft_print_p ft_print_s ft_print_u ft_print_X_x ft_printf main
 SRCS 			=	$(addsuffix .c, $(SRC))
 OBJ_DIR			=	obj
 OBJS			=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
-LIBFT_PATH		=	../Libft
+LIBFT_PATH		=	../libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 $(OBJ_DIR)/%.o:		%.c
 					$(CC) $(CFLAGS) -c $< -o $@
@@ -20,6 +20,8 @@ all:				$(NAME)
 $(NAME):			$(LIBFT) $(OBJ_DIR) $(OBJS)
 				cp	$(LIBFT) $(NAME)
 					$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+					$(MAIN): $(OBJECTS)
+					$(CC) $(CFLAGS) -o main $(OBJS)
 
 $(LIBFT):
 					make -C $(LIBFT_PATH) all
