@@ -11,16 +11,22 @@
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF
-# define FT_PRINTF
+#define FT_PRINTF
 
 #include <stdarg.h>
 #include "libft.h"
 #include <unistd.h>
 
-int	ft_putchar(char c);
-int	ft_printstr(char *str);
-int print_numbers(int numbers);
-
-
-
+int	ft_printchar(char c);
+int ft_printnumbers(int numbers);
+void	ft_phexa(unsigned long long n);
+int	count_digits(unsigned long long n);
+int	ft_printp(unsigned long long n);
+int ft_printstr(char *str);
+int	number_digits(unsigned int n);
+static char	*trans_string(unsigned int n);
+int ft_print_u(unsigned int n);
+int	len_hexa(unsigned int n);
+void ft_converthexa(unsigned int n, const char c);
+int ft_printhexa(unsigned int n, char c);
 #endif
