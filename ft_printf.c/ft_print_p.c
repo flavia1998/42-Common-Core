@@ -10,11 +10,11 @@ void	ft_phexa(unsigned long long n)
 	else
 	{
 		if (n <= 9)
-			ft_putchar(n + '0');
+			ft_putchar_fd(n + '0', 1);
 		else
-			ft_putchar(n - 10 + 'a');
+			ft_putchar_fd(n - 10 + 'a', 1);
 	}
-} 
+}
 
 int	count_digits(unsigned long long n)
 {
@@ -29,7 +29,7 @@ int	count_digits(unsigned long long n)
 	return (i);
 }
 
-int	ft_printp(unsigned long long n)
+int	ft_print_p(unsigned long long n)
 {
 	int digits_value;
 
@@ -46,5 +46,5 @@ int	ft_printp(unsigned long long n)
 // int main(void)
 // {
 //     int numero_hexa = 500;
-//     int n = ft_printp(numero_hexa);  
+//     int n = ft_printp(numero_hexa);
 // }

@@ -25,12 +25,12 @@ int calling_funtions(va_list args, char c)
 	if (c == 'p')
 		return (ft_print_p(va_arg(args, unsigned long long)));
 	if (c == 'X' || c == 'x')
-		return (ft_print_X_x(va_arg(args, unsigned int)));
+		return (ft_print_X_x(va_arg(args, unsigned int), c));
 	if (c == 'u')
 		return (ft_print_u(va_arg(args, unsigned int)));
 	if (c == '%')
 	{
-		write(1, '%', 1);
+		ft_putchar_fd('%', 1);
 		return (1);
 	}
 	return (0);
@@ -39,14 +39,14 @@ int calling_funtions(va_list args, char c)
 int ft_printf(const char *str, ...)
 {
 	va_list args;
-	va_start(args, str); 
+	va_start(args, str);
 
 	int total_param;
 	int i;
 
 	total_param = 0;
 	i = 0;
-	
+
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -56,7 +56,7 @@ int ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar((char) str[i]);
+			ft_putchar_fd((char) str[i], 1);
 			total_param++;
 		}
 		i++;

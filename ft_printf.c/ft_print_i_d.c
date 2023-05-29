@@ -12,11 +12,12 @@
 
 #include "ft_printf.h"
 
-int ft_printnumbers(int numbers)
+int ft_print_i_d(int numbers)
 {
 	char	*transf_num;
 	int		count;
 
+	count = 0;
 	transf_num = ft_itoa(numbers);
 	if (transf_num == NULL)
 	{
@@ -24,7 +25,7 @@ int ft_printnumbers(int numbers)
 		return (6);
 	}
 	else
-	{	
+	{
 		while (transf_num[count] != '\0')
 		{
 			write (1, &transf_num[count], 1),
@@ -38,6 +39,6 @@ int ft_printnumbers(int numbers)
 // {
 // 	int numero = 2147483647;
 // 	int nome = ft_printnumbers(numero);
-	
+
 // 	return (0);
 // }

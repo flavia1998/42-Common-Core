@@ -20,21 +20,21 @@ void ft_converthexa(unsigned int n, const char c)
         ft_converthexa(n / 16, c);
         ft_converthexa (n % 16, c);
     }
-    else 
+    else
     {
         if (n <= 9)
-            ft_putchar(n + '0');
-        else 
+            ft_putchar_fd(n + '0', 1);
+        else
         {
             if (c == 'x')
-                ft_putchar(n - 10 + 'a');
+                ft_putchar_fd(n - 10 + 'a', 1);
             else if (c == 'X')
-                ft_putchar(n - 10 + 'A');
+                ft_putchar_fd(n - 10 + 'A', 1);
         }
     }
-} 
+}
 
-int ft_printhexa(unsigned int n, char c)
+int ft_print_X_x(unsigned int n, char c)
 {
     ft_converthexa(n,c);
     return (len_hexa(n));
@@ -44,5 +44,5 @@ int ft_printhexa(unsigned int n, char c)
 // {
 //     int numero_hexa = 500;
 //     char c = 'X';
-//     int hexa = ft_printhexa(numero_hexa,c); 
+//     int hexa = ft_printhexa(numero_hexa,c);
 // }

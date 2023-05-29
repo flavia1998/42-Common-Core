@@ -1,42 +1,40 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/16 15:28:51 by fvieira-          #+#    #+#              #
-#    Updated: 2023/05/16 17:58:05 by fvieira-         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME			=	libftprintf.a
+CC				=	gcc
+CFLAGS			=	-Wall -Wextra -Werror
+AR				=	ar
+ARFLAGS 		=	rcs
+RM				=	rm -rf
+SRC = ft_print_c ft_print_i_d ft_print_p ft_print_s ft_print_u ft_print_X_x ft_printf
+SRCS 			=	$(addsuffix .c, $(SRC))
+OBJ_DIR			=	obj
+OBJS			=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
+LIBFT_PATH		=	../libft
+LIBFT			=	$(LIBFT_PATH)/libft.a
+$(OBJ_DIR)/%.o:		%.c
+					$(CC) $(CFLAGS) -c $< -o $@
 
-#variaveis
-CC = gcc
-NAME = ft_printf.a
-CFLAGS = -Wall -Werror -Wextra
-CREATE = ar rcs
-RM = rm -f
-INCLUDELIBFT= -I libft 
-OBJS = ${SRCS:.c=.o}
-SRC = ft_print_c.c ft_print_i_d.c ft_print_p.c ft_print_s.c ft_print_X_x.c ft_putchar.c ft_printf.c
+all:				$(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDELIBFT) $(SRC) -c -I . $< -o $@
+bonus:				all
 
-$(NAME) : $(OBJS)
-	$(CREATE) $(NAME) $(OBJS)
+$(NAME):			$(LIBFT) $(OBJ_DIR) $(OBJS)
+				cp	$(LIBFT) $(NAME)
+					$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-all : $(NAME)
+$(LIBFT):
+					make -C $(LIBFT_PATH) all
 
-clean : 
-	$(RM) $(OBJS)
+$(OBJ_DIR):
+					mkdir -p $(OBJ_DIR)
 
-fclean : clean 
-	$(RM) $(NAME) 
+clean:
+					make -C $(LIBFT_PATH) clean
+					$(RM) $(OBJ_DIR)
 
-re : fclean all
+fclean:				clean
+					make -C $(LIBFT_PATH) fclean
+					$(RM) $(NAME)
 
-.PHONY:		all clean fclean re 
+re:					fclean all
 
-
-
+.PHONY:				all bonus clean fclean re libft

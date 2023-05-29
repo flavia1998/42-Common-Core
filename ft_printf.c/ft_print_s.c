@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_printstr(char *str)
+int ft_print_s(char *str)
 {
 	int	i;
 	i = 0;
