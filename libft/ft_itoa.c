@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	count_digits(long int n)
+int	count_digits(long long int n)
 {
 	int	count;
 
@@ -34,7 +34,7 @@ char	*transformer_str(char *str, int nb, int c_digits)
 {
 	str[c_digits--] = '\0';
 	if (nb == 0)
-	{	
+	{
 		str[0] = '0';
 		return (str);
 	}

@@ -23,6 +23,7 @@ int ft_print_i_d(int numbers)
 	{
 		write (1, "(null)", 6);
 		return (6);
+
 	}
 	else
 	{
@@ -31,14 +32,15 @@ int ft_print_i_d(int numbers)
 			write (1, &transf_num[count], 1),
 			count++;
 		}
+		free(transf_num);
 		return (count);
 	}
 }
 
 // int main (void)
 // {
-// 	int numero = 2147483647;
-// 	int nome = ft_printnumbers(numero);
+// 	int numero = 0;
+// 	int nome = ft_print_i_d(numero);
 
 // 	return (0);
 // }

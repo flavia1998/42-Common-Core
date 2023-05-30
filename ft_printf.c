@@ -38,11 +38,11 @@ int calling_funtions(va_list args, char c)
 int ft_printf(const char *str, ...)
 {
 	va_list args;
-	va_start(args, str);
+
 
 	int total_param;
 	int i;
-
+	va_start(args, str);
 	total_param = 0;
 	i = 0;
 
@@ -51,11 +51,11 @@ int ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			total_param = total_param + calling_funtions(args, str[i]);
+			total_param += calling_funtions(args, str[i]);
 		}
 		else
 		{
-			ft_putchar_fd((char) str[i], 1);
+			ft_putchar_fd(str[i], 1);
 			total_param++;
 		}
 		i++;

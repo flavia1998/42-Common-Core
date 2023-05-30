@@ -8,7 +8,7 @@ int	number_digits(unsigned int n)
 	while (n > 0)
 	{
 		n = n / 10;
-		i++; 
+		i++;
 	}
 	return (i);
 }
@@ -23,7 +23,7 @@ static char	*trans_string(unsigned int n)
 	if (!str)
 		return (NULL);
 	while (len > 0)
-	{	
+	{
 		len --;
 		str[len] = (n % 10) + 48;
 		n = (n / 10);
@@ -32,7 +32,7 @@ static char	*trans_string(unsigned int n)
 }
 
 int ft_print_u(unsigned int n)
-{	
+{
 	char *wstr;
 	int	i;
 
@@ -48,6 +48,7 @@ int ft_print_u(unsigned int n)
 		write (1, &wstr[i], 1);
 		i++;
 	}
+	free (wstr);
 	return (i);
 }
 
