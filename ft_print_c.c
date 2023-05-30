@@ -12,17 +12,14 @@
 
 #include "ft_printf.h"
 
-int	ft_print_c(char c)
+int	t_print_c(char c)
 {
-	write(1, &c, 1);
+	write (1, &c, 1);
 	return (1);
 }
-
 // int main  (void)
 // {
 // 	char c = 'a';
-
 // 	int t = ft_putchar(c);
 // 	return 0;
 // }
-

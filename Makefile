@@ -6,7 +6,7 @@ LIBFTDIR = ./libft
 AR				=	ar
 ARFLAGS 		=	rcs
 
-SRC = 	ft_print_c ft_print_i_d ft_print_p ft_print_s ft_print_u ft_print_X_x ft_printf
+SRC = 	ft_print_c ft_print_i_d ft_print_p ft_print_s ft_print_u ft_print_bigx_x ft_printf
 SRCS 			=	$(addsuffix .c, $(SRC))
 OBJ_DIR			=	obj
 OBJS			=	$(SRCS:%.c=$(OBJ_DIR)/%.o)

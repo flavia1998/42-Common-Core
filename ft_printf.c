@@ -24,7 +24,7 @@ int calling_funtions(va_list args,char c)
 	else if (c == 'p')
 		return (ft_print_p(va_arg(args, unsigned long long)));
 	else if (c == 'X' || c == 'x')
-		return (ft_print_X_x(va_arg(args, unsigned int), c));
+		return (ft_print_bigx_x(va_arg(args, unsigned int), c));
 	else if (c == 'u')
 		return (ft_print_u(va_arg(args, unsigned int)));
 	if (c == '%')

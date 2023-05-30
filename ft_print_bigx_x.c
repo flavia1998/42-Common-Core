@@ -12,63 +12,50 @@
 
 #include "ft_printf.h"
 
-int	number_digits(unsigned int n)
+int	len_hexa(unsigned int n)
 {
 	int	i;
 
 	i = 0;
-	while (n > 0)
+	while (n >= 16)
 	{
-		n = n / 10;
+		n /= 16;
 		i++;
 	}
+	i++;
 	return (i);
 }
 
-static char	*trans_string(unsigned int n)
+void	ft_converthexa(unsigned int n, const char c)
 {
-	char	*str;
-	int		len;
-
-	len = number_digits(n);
-	str = (char*)malloc(len + 1);
-	if (!str)
-		return (NULL);
-	while (len > 0)
+	if (n >= 16)
 	{
-		len --;
-		str[len] = (n % 10) + 48;
-		n = (n / 10);
+		ft_converthexa(n / 16, c);
+		ft_converthexa(n % 16, c);
 	}
-	return (str);
+	else
+	{
+		if (n <= 9)
+			ft_putchar_fd(n + '0', 1);
+		else
+		{
+			if (c == 'x')
+				ft_putchar_fd(n - 10 + 'a', 1);
+			else if (c == 'X')
+				ft_putchar_fd(n - 10 + 'A', 1);
+		}
+	}
 }
 
-int	ft_print_u(unsigned int n)
+int	ft_print_bigx_x(unsigned int n, char c)
 {
-	char	*wstr;
-	int		i;
-
-	i = 0;
-	wstr = trans_string(n);
-	if (!wstr || wstr[i] == '\0')
-	{
-		write (1, "(null)", 6);
-		return (6);
-	}
-	while (wstr[i] != '\0')
-	{
-		write (1, &wstr[i], 1);
-		i++;
-	}
-	free (wstr);
-	return (i);
+	ft_converthexa(n, c);
+	return (len_hexa(n));
 }
 
 // int main(void)
 // {
-//     int numero = 0;
-// 	int o = ft_print_u(numero);
-// 	printf ("\n");
-//    printf("%u\n",numero);
-// 	return 0;
+//     int numero_hexa = 500;
+//     char c = 'X';
+//     int hexa = ft_printhexa(numero_hexa,c);
 // }

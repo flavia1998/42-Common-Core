@@ -12,13 +12,14 @@
 
 #include "ft_printf.h"
 
-int ft_print_s(char *str)
+int	ft_print_s(char *str)
 {
 	int	i;
+
 	i = 0;
 	if (!str)
 	{
-		write(1,"(null)",6);
+		write(1, "(null)", 6);
 		return (6);
 	}
 	while (str[i] != '\0')
