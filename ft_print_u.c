@@ -18,7 +18,7 @@ static char	*trans_string(unsigned int n)
 	char *str;
 	int len;
 
-	len = number_digits(n + 1);
+	len = number_digits(n);
 	str = (char*)malloc(len + 1);
 	if (!str)
 		return (NULL);

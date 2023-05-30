@@ -13,19 +13,19 @@
 #include "ft_printf.h"
 #include <stdarg.h>
 
-int calling_funtions(va_list args, char c)
+int calling_funtions(va_list args,char c)
 {
 	if (c == 'c')
 		return (ft_print_c(va_arg(args, int)));
-	if (c == 's')
+	else if (c == 's')
 		return (ft_print_s(va_arg(args, char *)));
-	if (c == 'i' || c == 'd')
+	else if (c == 'i' || c == 'd')
 		return (ft_print_i_d(va_arg(args, int)));
-	if (c == 'p')
+	else if (c == 'p')
 		return (ft_print_p(va_arg(args, unsigned long long)));
-	if (c == 'X' || c == 'x')
+	else if (c == 'X' || c == 'x')
 		return (ft_print_X_x(va_arg(args, unsigned int), c));
-	if (c == 'u')
+	else if (c == 'u')
 		return (ft_print_u(va_arg(args, unsigned int)));
 	if (c == '%')
 	{
@@ -39,7 +39,6 @@ int ft_printf(const char *str, ...)
 {
 	va_list args;
 
-
 	int total_param;
 	int i;
 	va_start(args, str);
@@ -51,7 +50,7 @@ int ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			total_param += calling_funtions(args, str[i]);
+			total_param = total_param + calling_funtions(args, str[i]);
 		}
 		else
 		{
@@ -63,4 +62,3 @@ int ft_printf(const char *str, ...)
 	va_end(args);
 	return (total_param);
 }
-
