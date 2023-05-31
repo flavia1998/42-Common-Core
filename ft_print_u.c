@@ -31,7 +31,7 @@ static char	*trans_string(unsigned int n)
 	int		len;
 
 	len = number_digits(n);
-	str = (char*)malloc(len + 1);
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
 	while (len > 0)

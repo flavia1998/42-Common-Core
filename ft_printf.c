@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include <stdarg.h>
 
-int calling_funtions(va_list args,char c)
+int	calling_funtions(va_list args, char c)
 {
 	if (c == 'c')
 		return (ft_print_c(va_arg(args, int)));
@@ -35,16 +35,15 @@ int calling_funtions(va_list args,char c)
 	return (0);
 }
 
-int ft_printf(const char *str, ...)
-{
-	va_list args;
+int	ft_printf(const char *str, ...)
+{	
+	int			total_param;
+	int			i;
+	va_list		args;
 
-	int total_param;
-	int i;
 	va_start(args, str);
 	total_param = 0;
 	i = 0;
-
 	while (str[i])
 	{
 		if (str[i] == '%')

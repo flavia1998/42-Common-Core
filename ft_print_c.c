@@ -17,9 +17,3 @@ int	ft_print_c(char c)
 	write (1, &c, 1);
 	return (1);
 }
-// int main  (void)
-// {
-// 	char c = 'a';
-// 	int t = ft_putchar(c);
-// 	return 0;
-// }
