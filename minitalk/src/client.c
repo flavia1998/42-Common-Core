@@ -1,4 +1,4 @@
-#include "minitalk.h"
+#include "../include/minitalk.h"
 
 void	sig_send(int pid, char c)
 {
@@ -7,11 +7,11 @@ void	sig_send(int pid, char c)
 	bit = 0;
 	while (bit < 8)
 	{
-		if (c & (1 << bit))
+		if ((c & (1 << bit)))
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(500);
+		usleep(100);
 		bit++;
 	}
 }

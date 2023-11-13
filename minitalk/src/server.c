@@ -1,4 +1,4 @@
-#include "minitalk.h"
+#include "../include/minitalk.h"
 
 void	handle_signal(int signal, siginfo_t *info, void *context)
 {
@@ -9,7 +9,7 @@ void	handle_signal(int signal, siginfo_t *info, void *context)
 	(void)context;
     if (signal == SIGUSR1)
     {
-       c = c | (1 << bit);
+      c = c | (1 << bit);
 	   bit++;
     }
     else if (signal == SIGUSR2)
@@ -36,7 +36,13 @@ int	main(int argc, char **argv)
 	pid = getpid();
 	ft_printf("%d\n", pid);
 	sigemptyset(&act.sa_mask);
-	act.sa_sigaction =handle_signal;
+	act.sa_sigaction = handle_signal;
 	act.sa_flags = SA_SIGINFO;
+	while (argc == 1)
+	{
+		sigaction(SIGUSR1, &act, NULL);
+		sigaction(SIGUSR2, &act, NULL);
+		pause();
+	}
     return 0;
 }

@@ -8,6 +8,11 @@ SRCC_FILES =	client.c
 SRCS_FILES =	server.c
 BONUSC_FILES = client_bonus.c 
 BONUSS_FILES = server_bonus.c
+SRC_DIR = src/
+SRCC = $(addprefix $(SRC_DIR), $(SRCC_FILES))
+SRCS = $(addprefix $(SRC_DIR), $(SRCS_FILES))
+BONUSC = $(addprefix $(SRC_DIR), $(BONUSC_FILES))
+BONUSS = $(addprefix $(SRC_DIR), $(BONUSS_FILES))
 OBJC = ${SRCC:.c=.o}
 OBJS = ${SRCS:.c=.o}
 OBJBC = ${BONUSC:.c=.o}
@@ -55,6 +60,3 @@ fclean : clean
 re : fclean all
 
 .PHONY:		all bonus clean fclean re
-
-
-
