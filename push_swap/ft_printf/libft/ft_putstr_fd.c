@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2023/11/18 20:55:19 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/28 17:07:02 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/05/03 15:48:15 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#	define PUSH_SWAP_H
+#include "libft.h"
 
-#	include <stdio.h>
-#	include <unistd.h>
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
 
-
-
-
-
-
-
-
-
-#endif
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write (fd, &s[i], 1);
+		i++;
+	}
+}

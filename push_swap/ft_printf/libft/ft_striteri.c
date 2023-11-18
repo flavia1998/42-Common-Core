@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2023/11/18 20:55:19 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/28 15:57:31 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/04/28 16:19:25 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#	define PUSH_SWAP_H
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	int	i;
 
-#	include <stdio.h>
-#	include <unistd.h>
-
-
-
-
-
-
-
-
-
-#endif
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f (i, &s[i]);
+		i++;
+	}	
+}

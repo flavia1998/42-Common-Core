@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2023/11/18 20:55:19 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/28 17:05:44 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/05/03 15:45:28 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#	define PUSH_SWAP_H
+#include "libft.h"
 
-#	include <stdio.h>
-#	include <unistd.h>
-
-
-
-
-
-
-
-
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
+}

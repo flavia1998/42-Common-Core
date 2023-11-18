@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2023/11/18 20:55:19 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/05/11 14:36:41 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/05/11 16:21:14 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#	define PUSH_SWAP_H
+#include "libft.h"
 
-#	include <stdio.h>
-#	include <unistd.h>
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*node;
 
-
-
-
-
-
-
-
-
-#endif
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
+}

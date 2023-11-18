@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2023/11/18 20:55:19 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/04/13 14:47:02 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/04/17 16:37:31 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#	define PUSH_SWAP_H
+#include "libft.h"
 
-#	include <stdio.h>
-#	include <unistd.h>
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char	y;
+	unsigned char	*name;
+	size_t			i;
 
-
-
-
-
-
-
-
-
-#endif
+	y = (unsigned char)c;
+	name = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		*name = y;
+		name++;
+		i++;
+	}
+	return (s);
+}
