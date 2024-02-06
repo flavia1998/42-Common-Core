@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 14:57:32 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/05/24 16:06:25 by fvieira-         ###   ########.fr       */
+/*   Updated: 2023/11/18 22:24:30 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF
 
 # include <stdarg.h>
-# include "./libft/libft.h"
+# include "libft.h"
 # include <unistd.h>
 
 void	ft_phexa(unsigned long long n);

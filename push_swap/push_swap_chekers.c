@@ -22,7 +22,7 @@ int check_arguments_repeat(int argc, char **argv)
         j = i + 1;
         while (j < argc)
         {
-            if (strcmp(argv[i], argv[j]) == 0)
+            if (ft_strcmp(argv[i], argv[j]) == 0)
             {
                 return 1;
             }
