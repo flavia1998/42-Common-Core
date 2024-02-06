@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/24 15:33:07 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/05/24 16:05:31 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/06/21 17:16:32 by fvieira           #+#    #+#             */
+/*   Updated: 2023/06/28 14:37:41 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_print_s(char *str)
-{
-	int	i;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-	i = 0;
-	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (str[i] != '\0')
-	{
-		write (1, &str[i], 1);
-		i++;
-	}
-	return (i);
-}
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
 
-// int main()
-// {
-// 	char *name = "maria";
-// 	int i = ft_printstr(name);
-// 	return 0;
-// }
+char	*get_next_line(int fd);
+size_t	ft_strlen(char *buffer);
+char	*ft_strjoin(char *left_str, char *buff);
+char	*ft_strchr(char *str, char c);
+char	*extract_line(char *str);
+char	*extract_line_rest(char *block);
+#endif
