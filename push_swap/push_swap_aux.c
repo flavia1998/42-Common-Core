@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int	check_arguments_repeat(int argc, char **argv)
+int check_arguments_repeat(int argc, char **argv)
 {
-	int	i;
+	int i;
 	int j;
 
 	i = 1;
@@ -25,7 +25,7 @@ int	check_arguments_repeat(int argc, char **argv)
 		{
 			if (ft_strcmp(argv[i], argv[j]) == 0)
 			{
-			    return 1;
+				return 1;
 			}
 			j++;
 		}
@@ -34,15 +34,70 @@ int	check_arguments_repeat(int argc, char **argv)
 	return 0;
 }
 
-Node *creat_node(int number)
+node_t *create_node(int number)
 {
-	Node *node;
+	node_t *new_node;
+	new_node = (node_t *)malloc(sizeof(node_t));
+	new_node->number = number;
+	new_node->next = NULL;
 
-	node =(Node*)malloc(sizeof(Node));
-	if (!node)
-		return (NULL);
-	node -> number = number;
-	node -> next = NULL;
-	return node;
+	return new_node;
 }
 
+void push_start(node_t **head, int number)
+{
+	if (head == NULL)
+	{
+		ft_printf("Linked list not initialized, error!\n");
+		return;
+	}
+
+	node_t *new_node;
+	new_node = create_node(number);
+
+	new_node->next = *head;
+	*head = new_node;
+}
+
+void push_end(node_t *head, int number)
+{
+	if (head == NULL)
+	{
+		ft_printf("Linked list not initialized, error!\n");
+		return;
+	}
+
+	node_t *new_node;
+	new_node = create_node(number);
+
+	node_t *aux = head;
+	while (aux->next)
+	{
+		aux = aux->next;
+	}
+
+	aux->next = new_node;
+}
+
+void print_list(node_t *head)
+{
+	node_t *aux = head;
+	while (aux)
+	{
+		printf("%d\n", aux->number);
+		aux = aux->next;
+	}
+}
+
+node_t *pop(node_t **head){
+	if (head == NULL)
+	{
+		ft_printf("Linked list not initialized, error!\n");
+		return NULL;
+	}
+
+    node_t *removed_node = *head;
+    *head = (*head)->next;
+
+    return removed_node;
+}

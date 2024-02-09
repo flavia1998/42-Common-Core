@@ -6,7 +6,7 @@
 /*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2024/02/09 16:13:43 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/02/09 21:44:46 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-typedef struct
+typedef struct node
 {
     int number;
-    struct Node *next;
-} Node;
+    struct node *next;
+} node_t;
 
 int check_arguments_repeat(int argc, char **argv);
-void print_numbers(int argc, char **argv);
-Node *creat_node(int number);
+node_t *create_node(int number);
+void push_start(node_t **head, int number);
+void push_end(node_t *head, int number);
+void print_list(node_t *head);
+node_t *pop(node_t **head);
 
 #endif
