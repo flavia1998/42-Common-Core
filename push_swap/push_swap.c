@@ -1,20 +1,11 @@
 #include "push_swap.h"
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+int	main()
 {
-	if (argc <= 1)
-    {
-        ft_printf("You put more than 1 arg");
-    }
-
-    if (check_arguments_repeat(argc,argv) == 1)
-    {
-        ft_printf("You repeated numbers!");
-    }
+    char *n ="123";
+	ft_printf("%d",ft_atoi(n));
     
-	
-    
-
     return 0;
 }
 
