@@ -6,7 +6,7 @@
 /*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2024/02/19 16:46:59 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:55:05 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct node
 {
     int number;
     struct node *next;
+    struct node *prev;
 } node_t;
 
 int check_arguments_repeat(int argc, char **argv);
@@ -31,5 +32,6 @@ void push_end(node_t *head, int number);
 void print_list(node_t *head);
 node_t *pop(node_t **head);
 int count_nodes(node_t *head);
+node_t	*swap_first_two(node_t *head);
 
 #endif

@@ -41,7 +41,6 @@ int count_nodes(node_t *head)
 	int	i;
 	
 	i = 0;
-
 	while (aux != NULL)
 	{
 		aux = aux->next;

@@ -6,7 +6,7 @@
 /*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:37:38 by fvieira-          #+#    #+#             */
-/*   Updated: 2024/02/19 16:47:46 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:57:11 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int main(int argc, char **argv)
 
 	int nodes = count_nodes(head);
 	ft_printf("%d", nodes);
+	swap_first_two(head);
+	print_list(head);
 
 	return 0;
 }
