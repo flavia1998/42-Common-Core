@@ -6,7 +6,7 @@
 /*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2024/02/09 21:44:46 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:46:59 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void push_start(node_t **head, int number);
 void push_end(node_t *head, int number);
 void print_list(node_t *head);
 node_t *pop(node_t **head);
+int count_nodes(node_t *head);
 
 #endif

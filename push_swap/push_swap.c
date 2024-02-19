@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/19 16:37:38 by fvieira-          #+#    #+#             */
+/*   Updated: 2024/02/19 16:47:46 by fvieira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "push_swap.h"
 #include <stdio.h>
-
-
 
 int main(int argc, char **argv)
 {
@@ -28,13 +39,8 @@ int main(int argc, char **argv)
 		i++;
 	}
 
-	print_list(head);
-
-	pop(&head);
-
-	printf("\n");
-	
-	print_list(head);
+	int nodes = count_nodes(head);
+	ft_printf("%d", nodes);
 
 	return 0;
 }
