@@ -43,7 +43,6 @@ int main(int argc, char **argv)
 	ft_printf("%d", nodes);
 
 	printf("Before: \n");
-	swap_first_two(head);
 	print_list(head);
 
 	swap_first_two(&head);

@@ -6,7 +6,7 @@ AR				=	ar
 ARFLAGS 		=	rcs
 RM				=	rm -rf
 
-SRC				=   push_swap_aux push_swap ft_sa
+SRC				=   push_swap_aux_list push_swap ft_sa push_swap_check_args
 SRCS 			=	$(addsuffix .c, $(SRC))
 
 OBJS 			= ${SRCS:.c=.o} 
