@@ -56,6 +56,7 @@ void push_start(node_t **head, int number)
 	new_node = create_node(number);
 
 	new_node->next = *head;
+	(*head)->prev=new_node;
 	*head = new_node;
 }
 
@@ -82,6 +83,7 @@ void push_end(node_t *head, int number)
 void print_list(node_t *head)
 {
 	node_t *aux = head;
+
 	while (aux)
 	{
 		printf("%d\n", aux->number);

@@ -22,6 +22,7 @@ typedef struct node
 {
     int number;
     struct node *next;
+    struct node *prev;
 } node_t;
 
 int check_arguments_repeat(int argc, char **argv);
@@ -30,5 +31,6 @@ void push_start(node_t **head, int number);
 void push_end(node_t *head, int number);
 void print_list(node_t *head);
 node_t *pop(node_t **head);
+void swap_first_two (node_t **head);
 
 #endif

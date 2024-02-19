@@ -1,8 +1,6 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-
-
 int main(int argc, char **argv)
 {
 	int i;
@@ -23,18 +21,19 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			push_end(head, number);
+			push_start(&head, number);
 		}
 		i++;
 	}
-
-	print_list(head);
-
-	pop(&head);
-
-	printf("\n");
 	
+	printf("Before: \n");
 	print_list(head);
+
+	swap_first_two(&head);
+	
+	printf("\nAfter: \n");
+	print_list(head);
+
 
 	return 0;
 }
