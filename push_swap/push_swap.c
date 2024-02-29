@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 #include <stdio.h>
 
@@ -18,7 +17,8 @@ int main(int argc, char **argv)
 {
 	int i;
 	int number;
-	stack_t *head = NULL;
+	stacks_t *stacks = NULL;
+	stacks = malloc(sizeof(stack_t));
 
 	i = 1;
 	if (argc < 2)
@@ -28,28 +28,51 @@ int main(int argc, char **argv)
 	while (i < argc)
 	{
 		number = ft_atoi(argv[i]);
-		if (head == NULL)
+		if (stacks->stack_a == NULL)
 		{
-			head = create_node(number);
+			stacks->stack_a = create_node(number);
 		}
 		else
 		{
-			push_start(&head, number);
+			push_start(&stacks->stack_a, number);
+		}
+		if (stacks->stack_b == NULL)
+		{
+			stacks->stack_b = create_node(number);
+		}
+		else
+		{
+			push_start(&stacks->stack_b, number);
 		}
 		i++;
 	}
 
-	int nodes = count_nodes(head);
+	int nodes = count_nodes(stacks->stack_b);
 	ft_printf("%d", nodes);
 
+	printf("\n\n------------- Stack A ---------------\n\n");
 	printf("Before: \n");
-	print_list(head);
+	print_list(stacks->stack_a);
 
-	swap_first_two(&head);
-	
+	printf("\n\n------------- Stack B ---------------\n\n");
+
+	printf("Before: \n");
+	print_list(stacks->stack_b);
+
+	rr(stacks);
+
+	printf("\n\n------------- Stack A ---------------\n\n");
+
 	printf("\nAfter: \n");
-	print_list(head);
+	print_list(stacks->stack_a);
 
+	printf("\n\n------------- Stack B ---------------\n\n");
+
+	printf("\nAfter: \n");
+	print_list(stacks->stack_b);
+
+
+	
 
 	return 0;
 }

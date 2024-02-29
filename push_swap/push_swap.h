@@ -27,8 +27,8 @@ typedef struct stack
 
 typedef struct stacks
 {
-    struct stack_t *stack_a;
-    struct stack_t *stack_b;
+    struct stack *stack_a;
+    struct stack *stack_b;
 } stacks_t;
 
 int check_arguments_repeat(int argc, char **argv);
@@ -39,5 +39,12 @@ void print_list(stack_t *head);
 stack_t *pop(stack_t **head);
 void swap_first_two (stack_t **head);
 int count_nodes(stack_t *head);
-
+void sa(stacks_t *stacks);
+void sb(stacks_t *stacks);
+void ss(stacks_t *stacks);
+void pa(stacks_t *stacks);
+void pb(stacks_t *stacks);
+void ra(stacks_t *stacks);
+void rb (stacks_t *stacks);
+void rr(stacks_t *stacks);
 #endif

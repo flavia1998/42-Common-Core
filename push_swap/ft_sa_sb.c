@@ -18,8 +18,26 @@ void swap_first_two(stack_t **head)
     {
         third->prev = NULL;
         third->prev = first;
-    } else {
+    }
+    else
+    {
         first->next = NULL;
     }
     *head = second;
+}
+
+void sa(stacks_t *stacks)
+{
+    swap_first_two(&stacks->stack_a);
+}
+
+void sb(stacks_t *stacks)
+{
+    swap_first_two(&stacks->stack_b);
+}
+
+void ss(stacks_t *stacks)
+{
+    sa(stacks);
+    sb(stacks);
 }
