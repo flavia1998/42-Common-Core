@@ -22,7 +22,7 @@ typedef struct stack
 {
     int number;
     struct stack *next;
-    struct stack *prev;
+    //struct stack *prev;
 } stack_t;
 
 typedef struct stacks
@@ -47,4 +47,7 @@ void pb(stacks_t *stacks);
 void ra(stacks_t *stacks);
 void rb (stacks_t *stacks);
 void rr(stacks_t *stacks);
+void rra(stacks_t *stack);
+void rrb(stacks_t *stack);
+void rrr(stacks_t *stack);
 #endif
