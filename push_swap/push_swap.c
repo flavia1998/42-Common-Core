@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 {
 	int i;
 	int number;
-	node_t *head = NULL;
+	stack_t *head = NULL;
 
 	i = 1;
 	if (argc < 2)

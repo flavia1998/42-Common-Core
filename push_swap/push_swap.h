@@ -18,20 +18,26 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-typedef struct node
+typedef struct stack
 {
     int number;
-    struct node *next;
-    struct node *prev;
-} node_t;
+    struct stack *next;
+    struct stack *prev;
+} stack_t;
+
+typedef struct stacks
+{
+    struct stack_t *stack_a;
+    struct stack_t *stack_b;
+} stacks_t;
 
 int check_arguments_repeat(int argc, char **argv);
-node_t *create_node(int number);
-void push_start(node_t **head, int number);
-void push_end(node_t *head, int number);
-void print_list(node_t *head);
-node_t *pop(node_t **head);
-void swap_first_two (node_t **head);
-int count_nodes(node_t *head);
+stack_t *create_node(int number);
+void push_start(stack_t **head, int number);
+void push_end(stack_t *head, int number);
+void print_list(stack_t *head);
+stack_t *pop(stack_t **head);
+void swap_first_two (stack_t **head);
+int count_nodes(stack_t *head);
 
 #endif

@@ -1,13 +1,13 @@
 #include "push_swap.h"
 
-void swap_first_two(node_t **head)
+void swap_first_two(stack_t **head)
 {
     if (*head == NULL || (*head)->next == NULL)
         return;
 
-    node_t *first = *head;
-    node_t *second = (*head)->next;
-    node_t *third = second->next;
+    stack_t *first = *head;
+    stack_t *second = (*head)->next;
+    stack_t *third = second->next;
 
     first->next = third;
     first->prev = second;
