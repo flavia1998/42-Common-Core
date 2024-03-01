@@ -10,16 +10,9 @@ void swap_first_two(stack_t **head)
     stack_t *third = second->next;
 
     first->next = third;
-    first->prev = second;
     second->next = first;
-    second->prev = NULL;
 
-    if (third)
-    {
-        third->prev = NULL;
-        third->prev = first;
-    }
-    else
+    if (!third)
     {
         first->next = NULL;
     }

@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 	printf("Before: \n");
 	print_list(stacks->stack_b);
 
-	rrr(stacks);
+	organized(stacks);
 
 	printf("\n\n------------- Stack A ---------------\n\n");
 

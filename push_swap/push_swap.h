@@ -50,4 +50,5 @@ void rr(stacks_t *stacks);
 void rra(stacks_t *stack);
 void rrb(stacks_t *stack);
 void rrr(stacks_t *stack);
+void organized(stacks_t *stacks);
 #endif

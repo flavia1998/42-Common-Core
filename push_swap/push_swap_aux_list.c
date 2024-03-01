@@ -34,7 +34,6 @@ void push_start(stack_t **head, int number)
 	new_node = create_node(number);
 
 	new_node->next = *head;
-	(*head)->prev=new_node;
 	*head = new_node;
 }
 
