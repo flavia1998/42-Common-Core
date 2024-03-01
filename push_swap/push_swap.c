@@ -13,6 +13,29 @@
 #include "push_swap.h"
 #include <stdio.h>
 
+void print_stacks(stacks_t *stacks){
+	stack_t *aux_a = stacks->stack_a;
+	stack_t *aux_b = stacks->stack_b;
+
+	printf("-------\n");
+	printf("[A]  [B]\n");
+	while (aux_a && aux_b)
+	{
+		if (aux_a){
+			printf(" %d", aux_a->number);
+			aux_a = aux_a->next;
+		} else {
+			printf("  ");
+		}
+		printf("    ");
+		if (aux_b){
+			printf("%d", aux_b->number);
+			aux_b = aux_b->next;
+		}
+		printf("\n");
+	}
+}
+
 int main(int argc, char **argv)
 {
 	int i;
@@ -47,32 +70,11 @@ int main(int argc, char **argv)
 		i++;
 	}
 
-	int nodes = count_nodes(stacks->stack_b);
-	ft_printf("%d", nodes);
-
-	printf("\n\n------------- Stack A ---------------\n\n");
-	printf("Before: \n");
-	print_list(stacks->stack_a);
-
-	printf("\n\n------------- Stack B ---------------\n\n");
-
-	printf("Before: \n");
-	print_list(stacks->stack_b);
+	print_stacks(stacks);
 
 	organized(stacks);
 
-	printf("\n\n------------- Stack A ---------------\n\n");
-
-	printf("\nAfter: \n");
-	print_list(stacks->stack_a);
-
-	printf("\n\n------------- Stack B ---------------\n\n");
-
-	printf("\nAfter: \n");
-	print_list(stacks->stack_b);
-
-
+	print_stacks(stacks);
 	
-
 	return 0;
 }
