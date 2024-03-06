@@ -13,7 +13,8 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void print_stacks(stacks_t *stacks){
+void print_stacks(stacks_t *stacks)
+{
 	stack_t *aux_a = stacks->stack_a;
 	stack_t *aux_b = stacks->stack_b;
 
@@ -21,14 +22,18 @@ void print_stacks(stacks_t *stacks){
 	printf("[A]  [B]\n");
 	while (aux_a || aux_b)
 	{
-		if (aux_a){
+		if (aux_a)
+		{
 			printf(" %d", aux_a->number);
 			aux_a = aux_a->next;
-		} else {
+		}
+		else
+		{
 			printf("  ");
 		}
 		printf("    ");
-		if (aux_b){
+		if (aux_b)
+		{
 			printf("%d", aux_b->number);
 			aux_b = aux_b->next;
 		}
@@ -44,10 +49,12 @@ int main(int argc, char **argv)
 	stacks = malloc(sizeof(stack_t));
 
 	i = 1;
-	if (argc < 2)
+	if ( argc < 2 || check_arguments_repeat(argc, argv) == 1)
+	{
+		ft_printf("You have only one arg, or Reapeated numbers");
 		return 0;
-	if (check_arguments_repeat(argc, argv) == 1)
-		ft_printf("You have reapeted numbers");
+	}
+
 	while (i < argc)
 	{
 		number = ft_atoi(argv[i]);
@@ -68,6 +75,6 @@ int main(int argc, char **argv)
 	sort_stack(stacks);
 
 	print_stacks(stacks);
-	
+
 	return 0;
 }

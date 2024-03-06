@@ -68,7 +68,8 @@ void print_list(stack_t *head)
 	}
 }
 
-stack_t *pop(stack_t **head){
+stack_t *pop(stack_t **head)
+{
 	if (head == NULL)
 	{
 		ft_printf("Linked list not initialized, error!\n");

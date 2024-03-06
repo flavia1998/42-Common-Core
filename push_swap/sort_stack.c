@@ -1,24 +1,13 @@
 #include "push_swap.h"
 
-// void implement_algorit(stack_t *n_nodes)
-// {
-//     if (count_nodes(n_nodes) <= 3)
-//     {
-
-//     }else
-//     {
-
-//     }
-
-// }
-int check_list_sort(stacks_t *stacks)
+int is_stack_sorted(stacks_t *stacks)
 {
     stack_t *aux;
     aux = stacks->stack_a;
 
     while (aux)
     {
-        if (aux > aux->next)
+        if (aux->next && aux->number > aux->next->number)
         {
             return 0;
         }
@@ -27,17 +16,26 @@ int check_list_sort(stacks_t *stacks)
     return 1;
 }
 
-
 void sort_stack(stacks_t *stacks)
 {
-    if (stacks->stack_a->next == NULL)
+    if ((stacks->stack_a->next == NULL))
         return;
+
+    if (is_stack_sorted(stacks) == 1)
+    {
+        printf("Stack already sorted ignoring...");
+        return;
+    }
+
+    int nodesCount = count_nodes(stacks->stack_a);
+    if (nodesCount == 2)
+    {
+        ra(stacks);
+
+        return;
+    }
+
 
     pb(stacks);
     pb(stacks);
-    // if (stacks->stack_a->number < stacks->stack_a->next->number)
-    //     {
-    //         sa(stacks);
-    //     }
 }
- 
