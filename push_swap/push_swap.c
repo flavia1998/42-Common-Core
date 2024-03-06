@@ -19,7 +19,7 @@ void print_stacks(stacks_t *stacks){
 
 	printf("-------\n");
 	printf("[A]  [B]\n");
-	while (aux_a && aux_b)
+	while (aux_a || aux_b)
 	{
 		if (aux_a){
 			printf(" %d", aux_a->number);
@@ -59,20 +59,13 @@ int main(int argc, char **argv)
 		{
 			push_start(&stacks->stack_a, number);
 		}
-		if (stacks->stack_b == NULL)
-		{
-			stacks->stack_b = create_node(number);
-		}
-		else
-		{
-			push_start(&stacks->stack_b, number);
-		}
+
 		i++;
 	}
 
 	print_stacks(stacks);
 
-	organized(stacks);
+	sort_stack(stacks);
 
 	print_stacks(stacks);
 	

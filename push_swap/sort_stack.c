@@ -22,23 +22,22 @@ int check_list_sort(stacks_t *stacks)
         {
             return 0;
         }
-        
         aux = aux->next;
     }
-
     return 1;
-    
 }
 
 
-void organized_three_numbers(stacks_t *stacks)
+void sort_stack(stacks_t *stacks)
 {
     if (stacks->stack_a->next == NULL)
         return;
 
-    if (stacks->stack_a->number < stacks->stack_a->next->number)
-        {
-            sa(stacks);
-        }
+    pb(stacks);
+    pb(stacks);
+    // if (stacks->stack_a->number < stacks->stack_a->next->number)
+    //     {
+    //         sa(stacks);
+    //     }
 }
  
