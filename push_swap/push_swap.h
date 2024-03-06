@@ -18,20 +18,37 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-typedef struct node
+typedef struct stack
 {
     int number;
-    struct node *next;
-    struct node *prev;
-} node_t;
+    struct stack *next;
+    //struct stack *prev;
+} stack_t;
+
+typedef struct stacks
+{
+    struct stack *stack_a;
+    struct stack *stack_b;
+} stacks_t;
 
 int check_arguments_repeat(int argc, char **argv);
-node_t *create_node(int number);
-void push_start(node_t **head, int number);
-void push_end(node_t *head, int number);
-void print_list(node_t *head);
-node_t *pop(node_t **head);
-void swap_first_two (node_t **head);
-int count_nodes(node_t *head);
-
+stack_t *create_node(int number);
+void push_start(stack_t **head, int number);
+void push_end(stack_t *head, int number);
+void print_list(stack_t *head);
+stack_t *pop(stack_t **head);
+void swap_first_two (stack_t **head);
+int count_nodes(stack_t *head);
+void sa(stacks_t *stacks);
+void sb(stacks_t *stacks);
+void ss(stacks_t *stacks);
+void pa(stacks_t *stacks);
+void pb(stacks_t *stacks);
+void ra(stacks_t *stacks);
+void rb (stacks_t *stacks);
+void rr(stacks_t *stacks);
+void rra(stacks_t *stack);
+void rrb(stacks_t *stack);
+void rrr(stacks_t *stack);
+void sort_stack(stacks_t *stacks);
 #endif

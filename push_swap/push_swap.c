@@ -10,46 +10,71 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 #include <stdio.h>
+
+void print_stacks(stacks_t *stacks)
+{
+	stack_t *aux_a = stacks->stack_a;
+	stack_t *aux_b = stacks->stack_b;
+
+	printf("-------\n");
+	printf("[A]  [B]\n");
+	while (aux_a || aux_b)
+	{
+		if (aux_a)
+		{
+			printf(" %d", aux_a->number);
+			aux_a = aux_a->next;
+		}
+		else
+		{
+			printf("  ");
+		}
+		printf("    ");
+		if (aux_b)
+		{
+			printf("%d", aux_b->number);
+			aux_b = aux_b->next;
+		}
+		printf("\n");
+	}
+}
 
 int main(int argc, char **argv)
 {
 	int i;
 	int number;
-	node_t *head = NULL;
+	stacks_t *stacks = NULL;
+	stacks = malloc(sizeof(stack_t));
 
 	i = 1;
-	if (argc < 2)
+	if ( argc < 2 || check_arguments_repeat(argc, argv) == 1)
+	{
+		ft_printf("You have only one arg, or Reapeated numbers");
 		return 0;
-	if (check_arguments_repeat(argc, argv) == 1)
-		ft_printf("You have reapeted numbers");
+	}
+
 	while (i < argc)
 	{
 		number = ft_atoi(argv[i]);
-		if (head == NULL)
+		if (stacks->stack_a == NULL)
 		{
-			head = create_node(number);
+			stacks->stack_a = create_node(number);
 		}
 		else
 		{
-			push_start(&head, number);
+			push_start(&stacks->stack_a, number);
 		}
+
 		i++;
 	}
 
-	int nodes = count_nodes(head);
-	ft_printf("%d", nodes);
+	print_stacks(stacks);
 
-	printf("Before: \n");
-	print_list(head);
+	sort_stack(stacks);
 
-	swap_first_two(&head);
-	
-	printf("\nAfter: \n");
-	print_list(head);
-
+	print_stacks(stacks);
 
 	return 0;
 }

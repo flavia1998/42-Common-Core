@@ -34,9 +34,9 @@ int check_arguments_repeat(int argc, char **argv)
 	return 0;
 }
 
-int count_nodes(node_t *head)
+int count_nodes(stack_t *head)
 {
-	node_t *aux;
+	stack_t *aux;
 	aux = head;
 	int	i;
 	
