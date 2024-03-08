@@ -49,32 +49,38 @@ int main(int argc, char **argv)
 	stacks = malloc(sizeof(stack_t));
 
 	i = 1;
-	if ( argc < 2 || check_arguments_repeat(argc, argv) == 1)
+	if (argc < 2)
 	{
-		ft_printf("You have only one arg, or Reapeated numbers");
+		return 0;
+	}
+	
+	if (check_arguments_repeat(argc, argv) == 1 || check_if_str(argc,argv) == 0)
+	{
+		ft_printf("Error\n");
 		return 0;
 	}
 
 	while (i < argc)
 	{
-		number = ft_atoi(argv[i]);
+		number = ft_atoll(argv[i]);
+		
 		if (stacks->stack_a == NULL)
 		{
 			stacks->stack_a = create_node(number);
 		}
 		else
 		{
-			push_start(&stacks->stack_a, number);
+			push_end(stacks->stack_a, number);
 		}
 
 		i++;
 	}
 
-	print_stacks(stacks);
+	//print_stacks(stacks);
 
 	sort_stack(stacks);
 
-	print_stacks(stacks);
+	//print_stacks(stacks);
 
 	return 0;
 }

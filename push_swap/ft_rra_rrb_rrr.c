@@ -1,11 +1,11 @@
 #include "push_swap.h"
 
-void rra(stacks_t *stack)
+void rra(stacks_t *stacks)
 {
     stack_t *last_element;
     stack_t *before_last_element;
 
-    last_element = stack->stack_a;
+    last_element = stacks->stack_a;
 
     while (last_element->next)
     {
@@ -14,17 +14,17 @@ void rra(stacks_t *stack)
             before_last_element = last_element;
     }
 
-    last_element->next = stack->stack_a;
-    stack->stack_a = last_element;
+    last_element->next = stacks->stack_a;
+    stacks->stack_a = last_element;
     before_last_element->next = NULL;
 }
 
-void rrb(stacks_t *stack)
+void rrb(stacks_t *stacks)
 {
     stack_t *last_element;
     stack_t *before_last_element;
 
-    last_element = stack->stack_b;
+    last_element = stacks->stack_b;
 
     while (last_element->next)
     {
@@ -33,13 +33,13 @@ void rrb(stacks_t *stack)
             before_last_element = last_element;
     }
 
-    last_element->next = stack->stack_b;
-    stack->stack_b = last_element;
+    last_element->next = stacks->stack_b;
+    stacks->stack_b = last_element;
     before_last_element->next = NULL;
 }
 
-void rrr(stacks_t *stack)
+void rrr(stacks_t *stacks)
 {
-    rra(stack);
-    rrb(stack);
+    rra(stacks);
+    rrb(stacks);
 }
