@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:47:46 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/19 15:43:32 by fvieira-         ###   ########.fr       */
+/*   Created: 2023/05/24 15:33:07 by fvieira-          #+#    #+#             */
+/*   Updated: 2023/05/24 16:05:31 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_atoi(const char *str)
+int	ft_print_s(char *str)
 {
 	int	i;
-	int	result;
-	int	sign;
 
-	result = 0;
 	i = 0;
-	sign = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '\0')
-		return (0);
-	if (str[i] == '-')
-		sign *= -1;
-	if (str[i] == '-' || str[i] == '+')
-			i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (!str)
 	{
-		result = result * 10 + (str[i] - '0');
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[i] != '\0')
+	{
+		write (1, &str[i], 1);
 		i++;
 	}
-	return (sign * result);
+	return (i);
 }
+
+// int main()
+// {
+// 	char *name = "maria";
+// 	int i = ft_printstr(name);
+// 	return 0;
+// }
